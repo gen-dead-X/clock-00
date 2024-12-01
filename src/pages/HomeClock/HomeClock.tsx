@@ -2,78 +2,66 @@ import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { motion, AnimatePresence } from "framer-motion";
 import "./HomeClock.scss";
+import useDateAndTime from "../../hooks/useDateAndTime";
 
 export default function HomeClock() {
-  const [time, setTime] = useState(new Date());
-  const [secondAngle, setSecondAngle] = useState(time.getSeconds() * 6); // Initial angle for the second hand
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const newTime = new Date();
-      setTime(newTime);
-      setSecondAngle((prev) => prev + 6); // Increment angle by 6 degrees per second
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  // Calculate angles for hour and minute hands
-  const hourAngle = (time.getHours() % 12) * 30 + time.getMinutes() * 0.5; // 30 degrees per hour + minute adjustment
-  const minuteAngle = time.getMinutes() * 6; // 6 degrees per minute
+  const { hourAngle, minuteAngle, secondAngle, time } = useDateAndTime();
 
   return (
-    <div className="clock flex h-screen w-screen items-center justify-center">
+    <div className="clock relative z-[50] flex h-screen w-screen items-center justify-center">
       <div className="relative flex h-[20rem] w-[20rem] items-center justify-center rounded-full border-[5px] border-gray-900 text-center text-gray-900">
-        {/* Hour Hand */}
-        <motion.div
-          className="absolute z-10"
-          style={{
-            height: "30%",
-            width: "4px",
-            backgroundColor: "black",
-            borderRadius: "2px",
-            bottom: "50%",
-            left: "50%",
-            transformOrigin: "bottom center",
-            transform: "translateX(-50%)",
-          }}
-          animate={{ rotate: hourAngle }}
-          transition={{ type: "spring", stiffness: 50, damping: 20 }}
-        />
+        <div className="analog-container relative h-full w-full z-30">
+          {/* Hour Hand */}
+          <motion.div
+            className="absolute z-10"
+            style={{
+              height: "30%",
+              width: "4px",
+              backgroundColor: "black",
+              borderRadius: "2px",
+              bottom: "50%",
+              left: "50%",
+              transformOrigin: "bottom center",
+              transform: "translateX(-50%)",
+            }}
+            animate={{ rotate: hourAngle }}
+            transition={{ type: "spring", stiffness: 50, damping: 20 }}
+          />
 
-        {/* Minute Hand */}
-        <motion.div
-          className="absolute z-10"
-          style={{
-            height: "40%",
-            width: "3px",
-            backgroundColor: "black",
-            borderRadius: "2px",
-            bottom: "50%",
-            left: "50%",
-            transformOrigin: "bottom center",
-            transform: "translateX(-50%)",
-          }}
-          animate={{ rotate: minuteAngle }}
-          transition={{ type: "spring", stiffness: 50, damping: 20 }}
-        />
+          {/* Minute Hand */}
+          <motion.div
+            className="absolute z-10"
+            style={{
+              height: "40%",
+              width: "3px",
+              backgroundColor: "black",
+              borderRadius: "2px",
+              bottom: "50%",
+              left: "50%",
+              transformOrigin: "bottom center",
+              transform: "translateX(-50%)",
+            }}
+            animate={{ rotate: minuteAngle }}
+            transition={{ type: "spring", stiffness: 50, damping: 20 }}
+          />
 
-        {/* Second Hand */}
-        <motion.div
-          className="absolute z-20"
-          style={{
-            height: "48%",
-            width: "2px",
-            backgroundColor: "red",
-            borderRadius: "1px",
-            bottom: "50%",
-            left: "50%",
-            transformOrigin: "bottom center",
-            transform: "translateX(-50%)",
-          }}
-          animate={{ rotate: secondAngle }}
-          transition={{ type: "linear", duration: 1, ease: "linear" }}
-        />
+          {/* Second Hand */}
+          <motion.div
+            className="absolute z-20"
+            style={{
+              height: "48%",
+              width: "2px",
+              backgroundColor: "red",
+              borderRadius: "1px",
+              bottom: "50%",
+              left: "50%",
+              transformOrigin: "bottom center",
+              transform: "translateX(-50%)",
+            }}
+            animate={{ rotate: secondAngle }}
+            transition={{ type: "linear", duration: 1, ease: "linear" }}
+          />
+        </div>
 
         {/* Digital Clock (Faded) */}
         <div className="digital-container absolute opacity-20">

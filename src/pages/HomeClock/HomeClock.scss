@@ -2,10 +2,38 @@
 
 .clock {
   font-family: "Orbitron", sans-serif;
-  background-color: #f9f9f9;
+  background-color: #f9f9f900;
+  backdrop-filter: blur(20px);
 
   .relative {
     position: relative;
+  }
+
+  .analog-container,
+  .digital-container {
+    transition: all 0.5s ease-in-out;
+  }
+
+  .analog-container,
+  .digital-container {
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .analog-container {
+    opacity: 1;
+
+    &:hover {
+      opacity: 0;
+
+      & ~ .digital-container {
+        opacity: 1;
+      }
+    }
+  }
+
+  .digital-container {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
   }
 
   .digital-container {
@@ -13,7 +41,6 @@
     transition: all 0.5s ease-in-out;
     position: absolute;
     z-index: 5;
-    opacity: 0.2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,37 +49,9 @@
       text-shadow: 2px 3px 0px rgba(0, 0, 0, 0);
     }
 
-    &:hover {
-      opacity: 1;
-
-      .clock-digit {
-        text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.18);
-      }
+    .clock-digit {
+      text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.18);
     }
-  }
-
-  .overflow-hidden {
-    overflow: hidden;
-  }
-
-  .h-12 {
-    height: 3rem; // Adjust height for sliding digits
-  }
-
-  .w-8 {
-    width: 2rem; // Adjust width for sliding digits
-  }
-
-  .text-4xl {
-    font-size: 2.5rem;
-  }
-
-  .flex {
-    display: flex;
-  }
-
-  .gap-2 {
-    gap: 0.5rem;
   }
 
   // Analog clock hands
