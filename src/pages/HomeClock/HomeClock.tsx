@@ -1,23 +1,27 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { format } from "date-fns";
 import { motion, AnimatePresence } from "framer-motion";
 import "./HomeClock.scss";
 import useDateAndTime from "../../hooks/useDateAndTime";
+import { UserContext } from "../../Context/UserContext";
 
 export default function HomeClock() {
   const { hourAngle, minuteAngle, secondAngle, time } = useDateAndTime();
+  const { darkMode } = useContext(UserContext);
 
   return (
-    <div className="clock relative z-[50] flex h-screen w-screen items-center justify-center">
-      <div className="relative flex h-[20rem] w-[20rem] items-center justify-center rounded-full border-[5px] border-gray-900 text-center text-gray-900">
+    <div className="clock flex h-dvh w-dvw items-center justify-center">
+      <div className="relative dark:bg-slate-900 flex h-[20rem] w-[20rem] items-center justify-center rounded-full border-[5px] dark:border-gray-100 border-gray-900 text-center text-gray-900">
         <div className="analog-container relative h-full w-full z-30">
+          <div className="h-3 w-3 z-40 bg-blue-700 dark:bg-white rounded-full absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]" />
+
           {/* Hour Hand */}
           <motion.div
             className="absolute z-10"
             style={{
               height: "30%",
               width: "4px",
-              backgroundColor: "black",
+              backgroundColor: darkMode ? "white" : "black",
               borderRadius: "2px",
               bottom: "50%",
               left: "50%",
@@ -34,7 +38,7 @@ export default function HomeClock() {
             style={{
               height: "40%",
               width: "3px",
-              backgroundColor: "black",
+              backgroundColor: darkMode ? "white" : "black",
               borderRadius: "2px",
               bottom: "50%",
               left: "50%",
@@ -112,7 +116,7 @@ function SlidingDigit({ digit }: Readonly<{ digit: string }>) {
   }, [digit, currentDigit]);
 
   return (
-    <div className="relative flex h-12 w-8 items-center justify-center overflow-hidden">
+    <div className="relative flex h-12 w-8 items-center justify-center overflow-hidden dark:text-white">
       <AnimatePresence initial={false}>
         <motion.div
           key={currentDigit}

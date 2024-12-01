@@ -1,9 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
 
+body.dark {
+  .clock {
+    background-color: #ffffff00;
+  }
+}
+
 .clock {
   font-family: "Orbitron", sans-serif;
   background-color: #f9f9f900;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
 
   .relative {
     position: relative;
@@ -85,14 +91,6 @@
     width: 2px; // Thickness of the second hand
     background-color: #ff0000; // Red color for second hand
     z-index: 5; // Above all hands
-  }
-
-  // Clock border and responsiveness
-  .rounded-full {
-    border: 5px solid #333; // Clock face border
-    background-color: #fff; // Clock face background
-    position: relative;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); // Subtle shadow for 3D effect
   }
 
   // Responsiveness

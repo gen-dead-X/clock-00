@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import useDateAndTime from "../../hooks/useDateAndTime";
+import { useContext } from "react";
+import { UserContext } from "../../Context/UserContext";
 
 export default function BackgroundClock() {
   const { hourAngle, minuteAngle, secondAngle } = useDateAndTime();
+  const { darkMode } = useContext(UserContext);
 
   return (
     <div className="h-dvh w-dvw flex justify-center items-center absolute z-[-20] top-0 left-0">
@@ -13,7 +16,7 @@ export default function BackgroundClock() {
           style={{
             height: "30%",
             width: "4px",
-            backgroundColor: "black",
+            backgroundColor: darkMode ? "white" : "black",
             borderRadius: "2px",
             bottom: "50%",
             left: "50%",
@@ -30,7 +33,7 @@ export default function BackgroundClock() {
           style={{
             height: "40%",
             width: "3px",
-            backgroundColor: "black",
+            backgroundColor: darkMode ? "white" : "black",
             borderRadius: "2px",
             bottom: "50%",
             left: "50%",
