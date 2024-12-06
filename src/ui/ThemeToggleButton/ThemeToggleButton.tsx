@@ -37,7 +37,7 @@ export default function ThemeToggleButton() {
     } finally {
       setTimeout(() => {
         setShowLottie(false);
-      }, 2000);
+      }, 1000);
     }
   }
 

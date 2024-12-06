@@ -1,12 +1,12 @@
 .clock-lottie {
   background-color: white;
-  animation: clock-lottie-dark 2.1s;
+  animation: clock-lottie-dark 2s;
 }
 
 body.dark {
   .clock-lottie {
     background-color: #0f172a;
-    animation: clock-lottie 2.1s;
+    animation: clock-lottie 2s;
   }
 }
 
