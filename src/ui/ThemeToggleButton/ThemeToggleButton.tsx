@@ -40,7 +40,7 @@ export default function ThemeToggleButton() {
     } finally {
       setTimeout(() => {
         setShowLottie(false);
-      }, 5000);
+      }, 2000);
     }
   }
 
@@ -83,11 +83,11 @@ function Lottie() {
   return (
     <div className="clock-lottie fixed top-0 right-0 h-dvh w-dvw z-40 cursor-wait">
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <LottiePlayer
+        {/* <LottiePlayer
           loop
           animationData={clockLottie}
           className="h-[10rem] w-[10rem] lg:h-[40rem] lg:w-[40rem] dark:text-gray-900 text-gray-900"
-        />
+        /> */}
       </div>
     </div>
   );

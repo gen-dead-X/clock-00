@@ -15,7 +15,7 @@ export default function useDateAndTime() {
   }, []);
 
   const hourAngle = (time.getHours() % 12) * 30 + time.getMinutes() * 0.5;
-  const minuteAngle = time.getMinutes() * 6; // 6 degrees per minute
+  const minuteAngle = time.getMinutes() * 6;
 
   return { time, secondAngle, minuteAngle, hourAngle };
 }

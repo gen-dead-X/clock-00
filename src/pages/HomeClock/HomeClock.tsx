@@ -11,7 +11,7 @@ export default function HomeClock() {
 
   return (
     <div className="clock flex h-dvh w-dvw items-center justify-center">
-      <div className="relative dark:bg-slate-900 flex h-[20rem] w-[20rem] items-center justify-center rounded-full border-[5px] dark:border-gray-100 border-gray-900 text-center text-gray-900">
+      <div className="relative bg-white dark:bg-slate-900 flex h-[20rem] w-[20rem] items-center justify-center rounded-full border-[5px] dark:border-gray-100 border-gray-900 text-center text-gray-900">
         <div className="analog-container relative h-full w-full z-30">
           <div className="h-3 w-3 z-40 bg-blue-700 dark:bg-white rounded-full absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]" />
 
@@ -81,7 +81,7 @@ function DisplayTime({
 }: Readonly<{
   time: Date;
 }>) {
-  const hour = format(time, "hh");
+  const hour = format(time, "HH");
   const minute = format(time, "mm");
   const second = format(time, "ss");
 
