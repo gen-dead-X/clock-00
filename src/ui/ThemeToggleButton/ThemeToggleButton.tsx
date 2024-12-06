@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
 import { motion, useMotionValue, useAnimation } from "framer-motion";
 import { UserContext } from "../../Context/UserContext";
-import LottiePlayer from "lottie-react";
-import clockLottie from "../../lotiie/clock-lottie.json";
+// import LottiePlayer from "lottie-react";
+// import clockLottie from "../../lotiie/clock-lottie.json";
 import "./ThemeToggleButton.scss";
 import lightModeBulb from "../../assets/theme/lightModeBuld.svg";
 import darkModeBulb from "../../assets/theme/dakrModeBuld.svg";
