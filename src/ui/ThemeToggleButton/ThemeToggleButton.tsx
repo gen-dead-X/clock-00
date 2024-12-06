@@ -1,8 +1,6 @@
 import { useContext, useState } from "react";
 import { motion, useMotionValue, useAnimation } from "framer-motion";
 import { UserContext } from "../../Context/UserContext";
-// import LottiePlayer from "lottie-react";
-// import clockLottie from "../../lotiie/clock-lottie.json";
 import "./ThemeToggleButton.scss";
 import lightModeBulb from "../../assets/theme/lightModeBuld.svg";
 import darkModeBulb from "../../assets/theme/dakrModeBuld.svg";
@@ -10,15 +8,14 @@ import darkModeBulb from "../../assets/theme/dakrModeBuld.svg";
 export default function ThemeToggleButton() {
   const { darkMode, setDarkMode } = useContext(UserContext);
   const [showLottie, setShowLottie] = useState(false);
-  const yValue = useMotionValue(0); // Track the button's position
-  const controls = useAnimation(); // Control animations
+  const yValue = useMotionValue(0);
+  const controls = useAnimation();
 
   const handleDragEnd = (_, info) => {
     if (info.offset.y > 50) {
-      handleThemeChange(); // Trigger the theme change
+      handleThemeChange();
     }
 
-    // Reset position to the original (0)
     controls.start({ y: 0 });
   };
 
@@ -45,9 +42,9 @@ export default function ThemeToggleButton() {
   }
 
   return (
-    <>
+    <div className="fixed h-dvh w-dvw p-10">
       {showLottie && <Lottie />}
-      <motion.div>
+      <motion.div className="absolute top-[34px] right-16">
         <motion.button
           type="button"
           onClick={() => null} // Disable default click behavior
@@ -75,20 +72,12 @@ export default function ThemeToggleButton() {
           )}
         </motion.button>
       </motion.div>
-    </>
+    </div>
   );
 }
 
 function Lottie() {
   return (
-    <div className="clock-lottie fixed top-0 right-0 h-dvh w-dvw z-40 cursor-wait">
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        {/* <LottiePlayer
-          loop
-          animationData={clockLottie}
-          className="h-[10rem] w-[10rem] lg:h-[40rem] lg:w-[40rem] dark:text-gray-900 text-gray-900"
-        /> */}
-      </div>
-    </div>
+    <div className="clock-lottie absolute top-0 left-0 h-full w-full z-[999] cursor-wait" />
   );
 }

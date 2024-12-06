@@ -2,13 +2,18 @@
 
 body.dark {
   .clock {
-    background-color: #ffffff00;
+    background-color: #0f172a;
+
+    span {
+      color: #fff;
+    }
   }
 }
 
 .clock {
   font-family: "Orbitron", sans-serif;
-  background-color: #f9f9f900;
+  background-color: #f9f9f9;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 
   .relative {
@@ -18,11 +23,6 @@ body.dark {
   .analog-container,
   .digital-container {
     transition: all 0.5s ease-in-out;
-  }
-
-  .analog-container,
-  .digital-container {
-    transition: opacity 0.5s ease-in-out;
   }
 
   .analog-container {
@@ -38,22 +38,14 @@ body.dark {
   }
 
   .digital-container {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  .digital-container {
     cursor: progress;
+    opacity: 0;
     transition: all 0.5s ease-in-out;
     position: absolute;
     z-index: 5;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    .clock-digit {
-      text-shadow: 2px 3px 0px rgba(0, 0, 0, 0);
-    }
 
     .clock-digit {
       text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.18);

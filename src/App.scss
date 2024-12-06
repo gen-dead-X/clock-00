@@ -4,4 +4,12 @@ body {
 
 body.dark {
   background-color: #0f172a;
+
+  .general-shadow {
+    box-shadow: 0 0 20px 5px #0d296b4b;
+  }
+}
+
+.general-shadow {
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.125);
 }

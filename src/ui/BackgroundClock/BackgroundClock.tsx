@@ -2,14 +2,15 @@ import { motion } from "framer-motion";
 import useDateAndTime from "../../hooks/useDateAndTime";
 import { useContext } from "react";
 import { UserContext } from "../../Context/UserContext";
+import "./BackgroundClock.scss";
 
 export default function BackgroundClock() {
   const { hourAngle, minuteAngle, secondAngle } = useDateAndTime();
   const { darkMode } = useContext(UserContext);
 
   return (
-    <div className="h-dvh w-dvw flex justify-center items-center absolute z-[-20] top-0 left-0">
-      <div className="analog-container relative h-full w-full">
+    <div className="absolute flex-1 flex justify-center items-center z-[-20] top-0 left-0 blur-sm">
+      <div className="relative h-full w-full background-clock-container">
         {/* Hour Hand */}
         <motion.div
           className="absolute z-10"
@@ -61,7 +62,6 @@ export default function BackgroundClock() {
           transition={{ type: "linear", duration: 1, ease: "linear" }}
         />
       </div>
-      ;
     </div>
   );
 }
