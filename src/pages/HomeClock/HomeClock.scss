@@ -18,8 +18,8 @@ body.dark {
 
   .clock-container {
     &:hover {
-      & ~ background-clock-container {
-        opacity: 1;
+      & ~ .background-clock-container {
+        opacity: 1 !important;
       }
     }
   }

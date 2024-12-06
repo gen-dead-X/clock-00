@@ -15,7 +15,6 @@ export default function HomeClock() {
     <div className="flex h-dvh w-dvw items-center justify-center bg-gray-300 p-10 dark:bg-slate-800">
       <div className="general-shadow clock relative flex h-full flex-1 items-center justify-center rounded-[3rem]">
         <ThemeToggleButton />
-        <BackgroundClock />
 
         <div className="clock-container relative flex h-[20rem] w-[20rem] items-center justify-center rounded-full border-[5px] border-gray-900 bg-white text-center text-gray-900 dark:border-gray-100 dark:bg-slate-900">
           <div className="analog-container relative z-30 h-full w-full">
@@ -78,6 +77,8 @@ export default function HomeClock() {
             <DisplayTime time={time} />
           </div>
         </div>
+
+        <BackgroundClock />
       </div>
     </div>
   );
