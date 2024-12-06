@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { motion, useMotionValue, useAnimation } from 'framer-motion';
+import { motion, useMotionValue, useAnimation, type PanInfo } from 'framer-motion';
 import { UserContext } from '../../Context/UserContext';
 import './ThemeToggleButton.scss';
 import lightModeBulb from '../../assets/theme/lightModeBuld.svg';
@@ -11,7 +11,7 @@ export default function ThemeToggleButton() {
   const yValue = useMotionValue(0);
   const controls = useAnimation();
 
-  const handleDragEnd = (_, info) => {
+  const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     if (info.offset.y > 50) {
       handleThemeChange();
     }
