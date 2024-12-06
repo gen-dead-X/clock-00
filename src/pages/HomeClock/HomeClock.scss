@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
 body.dark {
   .clock {
@@ -11,10 +11,18 @@ body.dark {
 }
 
 .clock {
-  font-family: "Orbitron", sans-serif;
+  font-family: 'Orbitron', sans-serif;
   background-color: #f9f9f9;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+
+  .clock-container {
+    &:hover {
+      & ~ background-clock-container {
+        opacity: 1;
+      }
+    }
+  }
 
   .relative {
     position: relative;

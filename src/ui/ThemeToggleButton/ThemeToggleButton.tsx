@@ -1,9 +1,9 @@
-import { useContext, useState } from "react";
-import { motion, useMotionValue, useAnimation } from "framer-motion";
-import { UserContext } from "../../Context/UserContext";
-import "./ThemeToggleButton.scss";
-import lightModeBulb from "../../assets/theme/lightModeBuld.svg";
-import darkModeBulb from "../../assets/theme/dakrModeBuld.svg";
+import { useContext, useState } from 'react';
+import { motion, useMotionValue, useAnimation } from 'framer-motion';
+import { UserContext } from '../../Context/UserContext';
+import './ThemeToggleButton.scss';
+import lightModeBulb from '../../assets/theme/lightModeBuld.svg';
+import darkModeBulb from '../../assets/theme/dakrModeBuld.svg';
 
 export default function ThemeToggleButton() {
   const { darkMode, setDarkMode } = useContext(UserContext);
@@ -23,15 +23,15 @@ export default function ThemeToggleButton() {
     try {
       setShowLottie(true);
       if (darkMode) {
-        document.querySelector("body")?.classList.remove("dark");
-        localStorage.setItem("dark", "false");
+        document.querySelector('body')?.classList.remove('dark');
+        localStorage.setItem('dark', 'false');
         setDarkMode(false);
         return;
       }
 
-      document.querySelector("body")?.classList.add("dark");
+      document.querySelector('body')?.classList.add('dark');
       setDarkMode(true);
-      localStorage.setItem("dark", "true");
+      localStorage.setItem('dark', 'true');
     } catch (error) {
       console.error(error);
     } finally {
@@ -44,7 +44,7 @@ export default function ThemeToggleButton() {
   return (
     <div className="fixed h-dvh w-dvw p-10">
       {showLottie && <Lottie />}
-      <motion.div className="absolute top-[34px] right-16">
+      <motion.div className="absolute right-16 top-[34px]">
         <motion.button
           type="button"
           onClick={() => null} // Disable default click behavior
@@ -77,7 +77,5 @@ export default function ThemeToggleButton() {
 }
 
 function Lottie() {
-  return (
-    <div className="clock-lottie absolute top-0 left-0 h-full w-full z-[999] cursor-wait" />
-  );
+  return <div className="clock-lottie absolute left-0 top-0 z-[999] h-full w-full cursor-wait" />;
 }
