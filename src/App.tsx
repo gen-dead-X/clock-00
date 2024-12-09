@@ -1,13 +1,14 @@
 import './App.scss';
 import { UserContextProvider } from './Context/UserContext';
 import Home from './pages/Home/Home';
-import Navbar from './ui/Navbar/Navbar';
+import DefaultContextMenu from './ui/Global/DefaultContextMenu/DefaultContextMenu';
 
 function App() {
   return (
     <UserContextProvider>
       <div className="main-wrapper relative">
-        <Navbar />
+        <DefaultContextMenu />
+
         <Home />
       </div>
     </UserContextProvider>

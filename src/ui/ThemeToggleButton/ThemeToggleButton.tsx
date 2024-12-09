@@ -42,7 +42,7 @@ export default function ThemeToggleButton() {
   }
 
   return (
-    <div className="fixed h-dvh w-dvw p-10">
+    <div className="fixed z-20 h-dvh w-dvw p-10">
       {showLottie && <Lottie />}
       <motion.div className="absolute right-16 top-[34px]">
         <motion.button
