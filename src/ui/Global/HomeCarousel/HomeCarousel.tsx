@@ -5,14 +5,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 import DefaultTransparentClock from '@/ui/Clocks/DefaultTransparent/DefaultTransparentClock';
+import WeatherWrapper from '@/ui/Weather/WeatherWrapper/WeatherWrapper';
 
 export default function HomeCarousel() {
-  const pages = [
-    <DefaultTransparentClock key={1} />,
-    <div key={2} className="flex h-full items-center justify-center">
-      Hello
-    </div>,
-  ];
+  const pages = [<DefaultTransparentClock key={1} />, <WeatherWrapper key={2} />];
 
   return (
     <div className="flex h-full w-full items-center justify-center">

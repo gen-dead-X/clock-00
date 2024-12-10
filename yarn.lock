@@ -1455,6 +1455,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/axios@npm:^0.14.4":
+  version: 0.14.4
+  resolution: "@types/axios@npm:0.14.4"
+  dependencies:
+    axios: "npm:*"
+  checksum: 10c0/945ef9d9d493b7292d33cf55679af90ffb60fe85475ce79327494480d517e8263f3f0c2f262396a1ada3ef4d66f3b05ea16b1f3c40680aa2b8399c36f6a92dfa
+  languageName: node
+  linkType: hard
+
 "@types/estree@npm:1.0.6, @types/estree@npm:^1.0.6":
   version: 1.0.6
   resolution: "@types/estree@npm:1.0.6"
@@ -2114,7 +2123,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.7.9":
+"axios@npm:*, axios@npm:^1.7.9":
   version: 1.7.9
   resolution: "axios@npm:1.7.9"
   dependencies:
@@ -2336,6 +2345,7 @@ __metadata:
     "@eslint/js": "npm:^9.15.0"
     "@radix-ui/react-context-menu": "npm:^2.2.2"
     "@radix-ui/react-slot": "npm:^1.1.0"
+    "@types/axios": "npm:^0.14.4"
     "@types/node": "npm:^22.10.1"
     "@types/react": "npm:^18.3.12"
     "@types/react-dom": "npm:^18.3.1"
