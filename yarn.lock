@@ -1511,6 +1511,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/swiper@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "@types/swiper@npm:6.0.0"
+  dependencies:
+    swiper: "npm:*"
+  checksum: 10c0/096a4a8017b296752d5a72bf5da07e2507eed0ae32603ce560060c9aee6134431c2d34fcde42bde3f4790ec498aa6e697d0e02d2b6a3e58d99c72a4794d3e9ba
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/eslint-plugin@npm:8.16.0":
   version: 8.16.0
   resolution: "@typescript-eslint/eslint-plugin@npm:8.16.0"
@@ -2330,6 +2339,7 @@ __metadata:
     "@types/node": "npm:^22.10.1"
     "@types/react": "npm:^18.3.12"
     "@types/react-dom": "npm:^18.3.1"
+    "@types/swiper": "npm:^6.0.0"
     "@vitejs/plugin-react-swc": "npm:^3.5.0"
     autoprefixer: "npm:^10.4.20"
     axios: "npm:^1.7.9"
@@ -2352,6 +2362,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-icons: "npm:^5.3.0"
     sass: "npm:^1.81.0"
+    swiper: "npm:^11.1.15"
     tailwind-merge: "npm:^2.5.5"
     tailwindcss: "npm:^3.4.15"
     tailwindcss-animate: "npm:^1.0.7"
@@ -5576,6 +5587,13 @@ __metadata:
   version: 1.0.0
   resolution: "supports-preserve-symlinks-flag@npm:1.0.0"
   checksum: 10c0/6c4032340701a9950865f7ae8ef38578d8d7053f5e10518076e6554a9381fa91bd9c6850193695c141f32b21f979c985db07265a758867bac95de05f7d8aeb39
+  languageName: node
+  linkType: hard
+
+"swiper@npm:*, swiper@npm:^11.1.15":
+  version: 11.1.15
+  resolution: "swiper@npm:11.1.15"
+  checksum: 10c0/3faabc5b33c0663513e8e41c4ef7920d4c9a1ca6b988848f2e51e1db0d01471a1bae22fce3177b9d3ab2c128fc6df23074415ae7957bd0f8542fd7387fa5263d
   languageName: node
   linkType: hard
 

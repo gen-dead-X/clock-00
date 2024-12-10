@@ -6,7 +6,6 @@ import Home from './pages/Home/Home';
 import DefaultContextMenu from './ui/Global/DefaultContextMenu/DefaultContextMenu';
 import { differenceInHours } from 'date-fns';
 import config from './config/config';
-import HomeCarousel from './ui/Global/HomeCarousel/HomeCarousel';
 
 function App() {
   useEffect(() => {
