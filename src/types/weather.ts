@@ -8,6 +8,7 @@ export type WeatherData = {
   tzoffset: number;
   description: string;
   days: Day[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   alerts: any[];
   stations: Record<string, Station>;
   currentConditions: CurrentConditions;
