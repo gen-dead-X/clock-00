@@ -28,27 +28,4 @@ export default function HomeCarousel() {
       </Swiper>
     </div>
   );
-  //   return (
-  //     <Swiper>
-  //       {/* {pages.map((page, index) => (
-  //           <SwiperSlide key={index}>{page}</SwiperSlide>
-  //         ))} */}
-  //       {Array.from({ length: 3 }).map((_, index) => (
-  //         <SwiperSlide key={index}>
-  //           <div className="w-dvh flex h-dvh items-center justify-center p-10">
-  //             <div
-  //               className="flex h-full w-full items-center justify-center rounded-xl"
-  //               style={{
-  //                 backgroundColor: `#${index}${index}8${index}c${index}`,
-  //               }}
-  //             >
-  //               Hello {index + 1}
-  //             </div>
-  //           </div>
-  //         </SwiperSlide>
-  //       ))}
-  //       {/* <Pagination /> */}
-  //       {/* <Navigation /> */}
-  //     </Swiper>
-  //   );
 }
