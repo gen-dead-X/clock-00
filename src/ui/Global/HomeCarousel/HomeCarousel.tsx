@@ -4,7 +4,7 @@ import 'swiper/swiper-bundle.css';
 import { Pagination } from 'swiper/modules';
 import DefaultTransparentClock from '@/ui/Clocks/DefaultTransparent/DefaultTransparentClock';
 import WeatherWrapper from '@/ui/Weather/WeatherWrapper/WeatherWrapper';
-import './HomeCarousel.scss';
+import './HomeCarousel.scss'; //Test
 
 export default function HomeCarousel() {
   const pages = [<DefaultTransparentClock key={1} />, <WeatherWrapper key={2} />];
