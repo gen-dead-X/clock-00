@@ -12,7 +12,7 @@ export default function DefaultTransparentClock() {
 
   return (
     <div className="flex h-full w-full items-center justify-center">
-      <div className="default-transparent-clock-container relative flex h-[20rem] w-[20rem] items-center justify-center rounded-full border-[5px] border-gray-900 bg-white text-center text-gray-900 dark:border-gray-100 dark:bg-slate-900">
+      <div className="default-transparent-clock-container relative flex h-[20rem] w-[20rem] cursor-pointer items-center justify-center rounded-full border-[5px] border-gray-900 bg-white text-center text-gray-900 dark:border-gray-100 dark:bg-slate-900">
         <div className="default-transparent-analog-container relative z-30 h-full w-full">
           <div className="absolute left-[50%] top-[50%] z-40 h-2 w-2 translate-x-[-50%] translate-y-[-50%] rounded-full bg-blue-700 dark:bg-blue-300" />
 
