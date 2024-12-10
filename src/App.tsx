@@ -7,9 +7,9 @@ function App() {
   return (
     <UserContextProvider>
       <div className="main-wrapper relative">
-        <DefaultContextMenu />
-
-        <Home />
+        <DefaultContextMenu>
+          <Home />
+        </DefaultContextMenu>
       </div>
     </UserContextProvider>
   );

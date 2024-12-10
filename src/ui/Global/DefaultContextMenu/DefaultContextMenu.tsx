@@ -14,10 +14,10 @@ import {
   ContextMenuTrigger,
 } from '@/components/ui/context-menu';
 
-export default function DefaultContextMenu() {
+export default function DefaultContextMenu({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <ContextMenu>
-      <ContextMenuTrigger className="fixed left-0 top-0 z-10 h-dvh w-dvw" />
+      <ContextMenuTrigger>{children}</ContextMenuTrigger>
 
       <ContextMenuContent className="w-64">
         <ContextMenuItem inset>
