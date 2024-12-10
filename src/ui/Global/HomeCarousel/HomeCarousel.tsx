@@ -1,7 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import 'swiper/swiper-bundle.css';
+
 import { Pagination } from 'swiper/modules';
 import DefaultTransparentClock from '@/ui/Clocks/DefaultTransparent/DefaultTransparentClock';
 import WeatherWrapper from '@/ui/Weather/WeatherWrapper/WeatherWrapper';
