@@ -3,6 +3,7 @@ type Engine = {
   url: string;
   logo: JSX.Element;
   displayLogo: JSX.Element;
+  color: string;
 };
 
 type SearchEngineProps = {
@@ -14,7 +15,11 @@ type SearchEngineProps = {
 export default function SearchEngine({ engine, searchEngine, setSearchEngine }: SearchEngineProps) {
   return (
     <div
-      className={`flex h-16 w-16 items-center justify-center rounded-full border-2 border-gray-500/30 p-2 ${engine.engine === searchEngine.engine ? 'border-blue-500/100' : ''}`}
+      className={`flex h-16 w-16 items-center justify-center rounded-full border-2 p-2 ${engine.engine === searchEngine.engine ? 'border-blue-500/100' : ''}`}
+      style={{
+        color: engine.color,
+        borderColor: engine.color,
+      }}
       key={engine.engine}
     >
       <button onClick={() => setSearchEngine(engine)} type="button">
