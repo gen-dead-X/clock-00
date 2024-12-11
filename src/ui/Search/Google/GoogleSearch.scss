@@ -14,6 +14,7 @@
   border-radius: 5rem;
   border: 1px solid rgba(157, 157, 157, 0.415);
   background: rgba(209, 213, 219, 0.332);
+  transition: all 0.3s;
 
   .logo {
     position: absolute;
@@ -35,4 +36,13 @@
       color: #9a9a9a75;
     }
   }
+}
+
+.google-search-container-active {
+  bottom: auto;
+  bottom: 50%;
+  transform: translateY(-50%);
+  width: 40rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
