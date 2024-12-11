@@ -3,13 +3,13 @@ import './GoogleSearch.scss';
 import { useEffect, useRef, useState } from 'react';
 import SearchEngine from '../SearchEngine/SearchEngine';
 import searchEngines from '../SearchEngine/Engines';
+import CloseOnOutsideClick from '@/ui/Global/CustomWrappers/CloseOnOutsideClick';
 
 export default function GoogleSearch() {
   const [search, setSearch] = useState('');
   const [active, setActive] = useState(false);
   const [currentSearchEngine, setCurrentSearchEngine] = useState(searchEngines[0]);
   const formRef = useRef<HTMLFormElement | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
 
   function handleSearch(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -19,19 +19,6 @@ export default function GoogleSearch() {
       setSearch('');
     }
   }
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-        setActive(false);
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
 
   useEffect(() => {
     if (!formRef.current) return;
@@ -49,9 +36,9 @@ export default function GoogleSearch() {
     <div
       className={`${active ? 'fixed left-0 top-0 z-20 h-dvh w-dvw bg-white dark:bg-slate-900' : ''} transition-all duration-300`}
     >
-      <div
+      <CloseOnOutsideClick
+        onOutsideClick={() => setActive(false)}
         onFocus={() => setActive(true)}
-        ref={containerRef}
         className={'flex h-auto w-auto items-center justify-center'}
       >
         <form
@@ -93,7 +80,7 @@ export default function GoogleSearch() {
             ))}
           </div>
         </div>
-      </div>
+      </CloseOnOutsideClick>
     </div>
   );
 }
