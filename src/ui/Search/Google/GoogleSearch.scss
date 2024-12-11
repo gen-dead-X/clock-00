@@ -34,7 +34,8 @@
 
   input {
     all: unset;
-    padding: 1.5rem 4rem;
+    padding: 1.5rem 1rem 1.5rem 4rem;
+    width: 100%;
 
     &::placeholder {
       color: #9a9a9a75;
@@ -49,6 +50,16 @@
   width: 40rem;
   left: 50%;
   transform: translateX(-50%);
+
+  input {
+    all: unset;
+    padding: 1.5rem 4rem;
+    width: 100%;
+
+    &::placeholder {
+      color: #9a9a9a75;
+    }
+  }
 }
 
 .search-change-animation {
