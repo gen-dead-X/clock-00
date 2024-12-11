@@ -7,7 +7,6 @@
     display: flex;
     align-items: center;
     border-radius: 5rem;
-    // border: 1px solid rgba(255, 255, 255, 0.368);
     background: rgb(30, 41, 59);
   }
 }
@@ -16,7 +15,7 @@
   display: flex;
   align-items: center;
   border-radius: 5rem;
-  border: 1px solid var(--search-engine-color) !important;
+  border: 3px solid var(--search-engine-color) !important;
   background: rgba(209, 213, 219, 0.332);
   transition: all 0.3s;
   color: var(--search-engine-color);

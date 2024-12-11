@@ -14,7 +14,7 @@ const searchEngines = [
       />
     ),
     displayLogo: <FaGoogle className="logo" />,
-    color: '#42ad6f',
+    color: '#33A853',
   },
   {
     engine: 'Bing',
