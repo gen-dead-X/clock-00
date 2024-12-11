@@ -10,11 +10,18 @@ export default function GoogleSearch() {
   const [currentSearchEngine, setCurrentSearchEngine] = useState(searchEngines[0]);
   const formRef = useRef<HTMLFormElement | null>(null);
 
-  function handleSearch() {
+  function handleSearch(e: React.FormEvent) {
+    e.preventDefault();
+
     if (search) {
       window.open(`${currentSearchEngine.url}${search}`);
       setSearch('');
     }
+  }
+
+  function handleButtonClick(e: React.MouseEvent) {
+    e.preventDefault();
+    handleSearch(e as unknown as React.FormEvent);
   }
 
   useEffect(() => {
@@ -37,7 +44,11 @@ export default function GoogleSearch() {
         <form
           ref={formRef}
           onFocus={() => setActive(true)}
-          onBlur={() => setActive(false)}
+          onBlur={(e) => {
+            if (!e.currentTarget.contains(e.relatedTarget)) {
+              setActive(false); // Only close if focus moves outside the form
+            }
+          }}
           onSubmit={handleSearch}
           style={
             {
@@ -56,7 +67,11 @@ export default function GoogleSearch() {
             onChange={(e) => setSearch(e.target.value)}
           />
 
-          <button className={`search-icon ${active ? '' : 'hidden'}`} type="submit">
+          <button
+            className={`search-icon ${active ? '' : 'hidden'}`}
+            type="button"
+            onClick={handleButtonClick}
+          >
             <CiSearch />
           </button>
         </form>
@@ -64,7 +79,6 @@ export default function GoogleSearch() {
         <div
           className={`engine-container mt-[10rem] flex flex-col gap-5 rounded-3xl border-gray-200 p-4 transition-all duration-300 dark:border-white ${active ? 'scale-100' : 'scale-0'}`}
         >
-          {/* <p className="text-center">Search Engines</p> */}
           <div className="t flex items-center gap-5 text-4xl">
             {searchEngines.map((engine) => (
               <SearchEngine
