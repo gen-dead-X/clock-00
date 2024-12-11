@@ -1,0 +1,38 @@
+.dark {
+  .google-search-container {
+    display: flex;
+    align-items: center;
+    border-radius: 5rem;
+    border: 1px solid rgba(255, 255, 255, 0.368);
+    background: rgb(30, 41, 59);
+  }
+}
+
+.google-search-container {
+  display: flex;
+  align-items: center;
+  border-radius: 5rem;
+  border: 1px solid rgba(157, 157, 157, 0.415);
+  background: rgba(209, 213, 219, 0.332);
+
+  .logo {
+    position: absolute;
+    left: 1rem;
+    font-size: 2rem;
+  }
+
+  .search-icon {
+    position: absolute;
+    right: 1rem;
+    font-size: 2rem;
+  }
+
+  input {
+    all: unset;
+    padding: 1.5rem 4rem;
+
+    &::placeholder {
+      color: #9a9a9a75;
+    }
+  }
+}
