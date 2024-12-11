@@ -42,9 +42,9 @@ export default function ThemeToggleButton() {
   }
 
   return (
-    <div className="fixed h-dvh w-dvw p-10">
+    <>
       {showLottie && <Lottie />}
-      <motion.div className="absolute right-16 top-[34px]">
+      <motion.div className="absolute right-16 top-0 z-30">
         <motion.button
           type="button"
           onClick={() => null} // Disable default click behavior
@@ -72,7 +72,7 @@ export default function ThemeToggleButton() {
           )}
         </motion.button>
       </motion.div>
-    </div>
+    </>
   );
 }
 
