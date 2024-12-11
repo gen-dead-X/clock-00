@@ -50,6 +50,7 @@
   width: 40rem;
   left: 50%;
   transform: translateX(-50%);
+  box-shadow: 0 0 40px 1px var(--search-engine-color);
 
   input {
     all: unset;
