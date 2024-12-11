@@ -6,11 +6,36 @@ import { SiDuckduckgo } from 'react-icons/si';
 import { useState } from 'react';
 
 const searchEngines = [
-  { engine: 'Google', url: 'https://www.google.com/search?q=', logo: <FaGoogle /> },
-  { engine: 'Bing', url: 'https://www.bing.com/search?q=', logo: <BsBing /> },
-  { engine: 'DuckDuckGo', url: 'https://duckduckgo.com/?q=', logo: <SiDuckduckgo /> },
-  { engine: 'Yahoo', url: 'https://search.yahoo.com/search?p=', logo: <FaYahoo /> },
-  { engine: 'Youtube', url: 'https://www.youtube.com/results?search_query=', logo: <FaYoutube /> },
+  {
+    engine: 'Google',
+    url: 'https://www.google.com/search?q=',
+    logo: <FaGoogle />,
+    displayLogo: <FaGoogle className="logo" />,
+  },
+  {
+    engine: 'Bing',
+    url: 'https://www.bing.com/search?q=',
+    logo: <BsBing />,
+    displayLogo: <BsBing className="logo" />,
+  },
+  {
+    engine: 'DuckDuckGo',
+    url: 'https://duckduckgo.com/?q=',
+    logo: <SiDuckduckgo />,
+    displayLogo: <SiDuckduckgo className="logo" />,
+  },
+  {
+    engine: 'Yahoo',
+    url: 'https://search.yahoo.com/search?p=',
+    logo: <FaYahoo />,
+    displayLogo: <FaYahoo className="logo" />,
+  },
+  {
+    engine: 'Youtube',
+    url: 'https://www.youtube.com/results?search_query=',
+    logo: <FaYoutube />,
+    displayLogo: <FaYoutube className="logo" />,
+  },
 ];
 
 export default function GoogleSearch() {
@@ -29,31 +54,34 @@ export default function GoogleSearch() {
     <div
       className={`${active ? 'fixed left-0 top-0 z-20 h-dvh w-dvw bg-white dark:bg-slate-900' : ''} transition-all duration-300`}
     >
-      <form
-        onSubmit={handleSearch}
+      <div
+        className="flex h-full w-full items-center justify-center"
         onFocus={() => setActive(true)}
         onBlur={() => setActive(false)}
-        className={`google-search-container fixed bottom-[10rem] left-[50%] z-30 flex h-auto w-[12rem] translate-x-[-50%] ${active ? 'google-search-container-active' : ''}`}
       >
-        <FaGoogle className="logo" />
+        <form
+          onSubmit={handleSearch}
+          className={`google-search-container fixed bottom-[10rem] left-[50%] z-30 flex h-auto w-[12rem] translate-x-[-50%] ${active ? 'google-search-container-active' : ''}`}
+        >
+          {searchEngine.displayLogo}
 
-        <input
-          type="text"
-          id="googleSearch"
-          placeholder="Search Google"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
+          <input
+            type="text"
+            id="googleSearch"
+            placeholder="Search Google"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
 
-        <button className={`search-icon ${active ? '' : 'hidden'}`} type="submit">
-          <CiSearch />
-        </button>
+          <button className={`search-icon ${active ? '' : 'hidden'}`} type="submit">
+            <CiSearch />
+          </button>
+        </form>
 
         <div
-          className={`absolute left-[50%] top-20 flex translate-x-[-50%] flex-col gap-5 rounded-3xl border-gray-200 p-4 dark:border-white ${active ? 'scale-100' : 'scale-0'}`}
+          className={`mt-[10rem] flex flex-col gap-5 rounded-3xl border-gray-200 p-4 transition-all duration-300 dark:border-white ${active ? 'scale-100' : 'scale-0'}`}
         >
           <p className="text-center">Search Engines</p>
-
           <div className="flex items-center gap-5 text-4xl">
             {searchEngines.map((engine) => (
               <div
@@ -67,7 +95,7 @@ export default function GoogleSearch() {
             ))}
           </div>
         </div>
-      </form>
+      </div>
     </div>
   );
 }
