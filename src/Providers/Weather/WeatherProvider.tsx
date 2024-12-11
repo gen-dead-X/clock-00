@@ -7,6 +7,9 @@ import { type ReactNode, useEffect, useMemo, useState } from 'react';
 
 export default function WeatherProvider({ children }: Readonly<{ children: ReactNode }>) {
   const [weather, setWeather] = useState<WeatherData | null>(null);
+  const [weatherTheme, setWeatherTheme] = useState<{ background: string; color: string } | null>(
+    null,
+  );
 
   useEffect(() => {
     async function getWeather() {
@@ -39,6 +42,11 @@ export default function WeatherProvider({ children }: Readonly<{ children: React
         localStorage.setItem('weatherTime', new Date().toISOString());
       } catch (e) {
         console.log(e);
+      } finally {
+        setWeatherTheme({
+          background: '#93c5fd',
+          color: '#1e3a8a',
+        });
       }
     }
 
@@ -49,8 +57,9 @@ export default function WeatherProvider({ children }: Readonly<{ children: React
     () => ({
       weather,
       setWeather,
+      weatherTheme,
     }),
-    [weather],
+    [weather, weatherTheme],
   );
 
   return <WeatherContext.Provider value={cachedValue}>{children}</WeatherContext.Provider>;

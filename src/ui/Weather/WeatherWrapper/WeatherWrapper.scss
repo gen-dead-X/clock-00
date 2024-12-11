@@ -1,0 +1,9 @@
+:root {
+  --weather-card-color: #fff;
+}
+
+.weather-wrapper-full {
+  .weather-wrapper {
+    background: var(--weather-card-color);
+  }
+}
