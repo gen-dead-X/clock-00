@@ -82,7 +82,7 @@ export default function WeatherWrapper() {
       }
       className="weather-wrapper-full flex h-full w-full items-center justify-center"
     >
-      <div className="weather-wrapper xl:w1/3 w-1/2 rounded-3xl p-10 backdrop-blur-sm">
+      <div className="weather-wrapper xl:w1/3 w-1/2 rounded-3xl p-10">
         <div className="flex items-center justify-between">
           <div>
             <img
