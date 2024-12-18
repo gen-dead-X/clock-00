@@ -1,7 +1,3 @@
-:root {
-  --weather-card-color: #fff;
-}
-
 body.dark {
   .weather-wrapper {
     background: #0f172a;
@@ -11,7 +7,7 @@ body.dark {
 .weather-wrapper-full {
   .weather-wrapper {
     position: relative;
-    background: #ffffff;
+    background: #ffffff82;
 
     &::before {
       position: absolute;
@@ -22,7 +18,6 @@ body.dark {
       height: 100%;
       background: var(--weather-card-color);
       filter: blur(200px);
-      // background-color: var(--weather-card-color);
       z-index: -1;
     }
   }

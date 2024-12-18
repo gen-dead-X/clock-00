@@ -63,12 +63,18 @@ export default function ThemeToggleButton() {
               className="h-full w-full p-1 hover:text-amber-500"
             />
           ) : (
-            <img
-              src={darkModeBulb}
-              alt="dark mode"
-              draggable="false"
-              className="h-full w-full p-1 hover:text-blue-800"
-            />
+            <>
+              <img
+                src={darkModeBulb}
+                alt="dark mode"
+                draggable="false"
+                className="h-full w-full p-1 hover:text-blue-800"
+              />
+              <div
+                className="absolute bottom-[-20px] left-[-20px] h-32 w-32 blur-3xl"
+                style={{ background: 'var(--weather-card-color)' }}
+              />
+            </>
           )}
         </motion.button>
       </motion.div>

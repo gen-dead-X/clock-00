@@ -5,6 +5,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+:root {
+  --weather-card-color: linear-gradient(180deg, #ffffff 0%, #f0f0f0 50%, #f0f0f0 100%);
+}
+
 body.dark {
   background-color: #0f172a;
 
