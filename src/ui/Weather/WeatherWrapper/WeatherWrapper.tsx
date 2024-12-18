@@ -10,7 +10,7 @@ export default function WeatherWrapper() {
   const imgRef = useRef<HTMLImageElement | null>(null);
   const { gradientColors } = useColorScheme({
     imgRef,
-    dependency: weather,
+    dependency: weather as unknown as React.DependencyList,
   });
 
   if (!weather) {

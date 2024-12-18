@@ -6,7 +6,7 @@ export default function useColorScheme({
   limit = 3,
 }: {
   imgRef: React.MutableRefObject<HTMLImageElement | null>;
-  dependency?: any;
+  dependency?: React.DependencyList;
   limit?: number;
 }) {
   const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
