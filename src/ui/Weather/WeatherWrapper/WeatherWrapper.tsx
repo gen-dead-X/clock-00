@@ -4,6 +4,7 @@ import './WeatherWrapper.scss';
 import type React from 'react';
 import { useRef } from 'react';
 import useColorScheme from '@/hooks/useColorScheme';
+import { format, parse } from 'date-fns';
 
 export default function WeatherWrapper() {
   const { weather } = useWeather();
@@ -30,8 +31,8 @@ export default function WeatherWrapper() {
       }
       className="weather-wrapper-full flex h-full w-full items-center justify-center"
     >
-      <div className="weather-wrapper xl:w1/3 w-1/2 rounded-3xl p-10">
-        <div className="flex items-center justify-between">
+      <div className="weather-wrapper w-[40rem] rounded-3xl p-10">
+        <div className="flex flex-col items-center justify-between">
           <div>
             <img
               ref={imgRef}
@@ -51,6 +52,22 @@ export default function WeatherWrapper() {
             <p>
               Feels Like {weather.currentConditions.feelslike}
               <sup>o</sup>C
+            </p>
+          </div>
+          <div className="flex w-full justify-between">
+            <p>
+              Sunrise :{' '}
+              {format(
+                parse(weather.currentConditions.sunrise, 'HH:mm:ss', new Date()),
+                'hh:mm:ss a',
+              )}
+            </p>
+            <p>
+              Sunset :{' '}
+              {format(
+                parse(weather.currentConditions.sunset, 'HH:mm:ss', new Date()),
+                'hh:mm:ss a',
+              )}
             </p>
           </div>
         </div>
